@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppMinhasCompras.Views.RelatorioCompras"
+             Title="RelatorioCompras">
+
+    <StackLayout Padding="10">
+        <Label Text="Filtrar por Período" FontSize="20" />
+
+        <Label Text="Data Inicial" />
+        <DatePicker x:Name="dpInicio" Format="dd/MM/yyyy" />
+
+        <Label Text="Data Final" />
+        <DatePicker x:Name="dpFim" Format="dd/MM/yyyy" />
+
+        <Button Text="Filtrar" Clicked="OnFiltrarClicked"/>
+
+        <ListView x:Name="lvRelatorio">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding Descricao}" />
+                            <Label Text="{Binding DataCadastro, StringFormat='{0:dd/MM/yyyy HH:mm}'}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
