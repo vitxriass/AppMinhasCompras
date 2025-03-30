@@ -1,3 +1,6 @@
+using MauiAppMinhasCompras.Models;
+
+
 namespace MauiAppMinhasCompras.Views
 {
     public partial class RelatorioCompras : ContentPage
